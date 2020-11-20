@@ -7,5 +7,5 @@ interval_len = 0.025
 
 t = Trace.from_json(f, 0.025)
 
-for item in t.traces["Stage"]:
-    pp.pprint(item)
+# for item in t.traces["Stage"]:
+#     pp.pprint(item)
