@@ -5,10 +5,6 @@ class Trace():
     '''class representing the trace object'''
     def __init__(self, raw_trace, interval_len):
         self.sprites = set(map(lambda x:x["sprite"]["name"], raw_trace))
-        self.t2 = {x:
-                        [y for y in raw_trace 
-                        if y["sprite"]["name"] == x]
-                    for x in self.sprites}
         self.traces = {x:
                         Trace.merge_to_interval([y for y in raw_trace 
                         if y["sprite"]["name"] == x], interval_len)
@@ -55,6 +51,7 @@ class Trace():
         merged_trace_df = pd.DataFrame(columns = ['clockTime', 'sprite', 'x', 'y', 'direction', 'touching', 'block', 'keysDown', 'variables', 'stageVariables'])
         new_interval = True
         stage_var_dict = {}
+        sprite_name = trace[0]["sprite"]["name"]
         for i, d in enumerate(trace):
             time_now = trace[i]["clockTime"]
             if new_interval:
@@ -83,7 +80,7 @@ class Trace():
                 }
                 merged_trace_df.loc[len(merged_trace_df)] = new_row
                 new_interval = True
-        merged_trace_df.to_csv("data/interval_trace.csv")
+        merged_trace_df.to_csv("data/interval_trace_"+sprite_name+".csv")
         return merged_trace_df
 
 class Event():
