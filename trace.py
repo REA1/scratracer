@@ -1,5 +1,6 @@
 import json
 import pandas as pd
+from event import PredicateSequence
 
 class Trace():
     '''class representing the trace object'''
@@ -83,14 +84,17 @@ class Trace():
         merged_trace_df.to_csv("data/interval_trace_"+sprite_name+".csv")
         return merged_trace_df
 
-class Event():
-    '''class representing an event'''
-    def __init__(self, id, attr=[]):
-        self.id = id
-        self.attr = attr
-
-class Attr():
-    '''class representing an attribute of an event'''
-    def __init__(self, id, value=None):
-        self.id = id
-        self.value = value
+    def mine_predicate_seq(self, predicates, window_size):
+        all_seqs = {}
+        for sprite in self.sprites:
+            seq = []
+            trace = self.traces[sprite]
+            t_len = len(trace.index)
+            for i in range(t_len):
+                ps = set()
+                for p in predicates:
+                    if (p_res := p(trace[i:(min(i+window_size+1, t_len))])) is not None:
+                        ps.add(p_res)
+                seq.append(ps)
+            all_seqs[sprite] = PredicateSequence(seq)
+        return all_seqs
