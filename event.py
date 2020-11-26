@@ -46,6 +46,6 @@ class Attr():
     def __init__(self, id, value=None):
         self.id = id
         self.value = value
-    
+
     def __repr__(self):
         return str(self.id) + ":" + str(self.value)
