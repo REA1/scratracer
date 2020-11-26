@@ -1,0 +1,151 @@
+,clockTime,sprite,x,y,direction,touching,block,keysDown,variables,stageVariables
+0,0.052,Paddle,12,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+1,0.086,Paddle,-8,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+2,0.124,Paddle,-28,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+3,0.153,Paddle,-48,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+4,0.186,Paddle,-48,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Left'],{},{}
+5,0.219,Paddle,-48,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+6,0.252,Paddle,-48,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+7,0.284,Paddle,-28,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+8,0.318,Paddle,-8,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+9,0.35,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+10,0.383,Paddle,32,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+11,0.417,Paddle,32,-145,-90,[],motion_changexby{math_number(NUM:-20)},"['Right', 'Left']",{},{}
+12,0.451,Paddle,12,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+13,0.486,Paddle,-8,-145,-90,[],motion_changexby{math_number(NUM:-20)},"['Right', 'Left']",{},{}
+14,0.518,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},"['Right', 'Left']",{},{}
+15,0.552,Paddle,32,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+16,0.586,Paddle,52,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+17,0.629,Paddle,72,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+18,0.686,Paddle,92,-145,-90,[],motion_changexby{math_number(NUM:-20)},"['Right', 'Left']",{},{}
+19,0.718,Paddle,72,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+20,0.75,Paddle,52,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+21,0.783,Paddle,32,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+22,0.816,Paddle,32,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Left'],{},{}
+23,0.852,Paddle,32,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+24,0.884,Paddle,12,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+25,0.919,Paddle,-8,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+26,0.951,Paddle,-28,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+27,0.985,Paddle,-48,-145,-90,[],motion_changexby{math_number(NUM:-20)},"['Right', 'Left']",{},{}
+28,1.016,Paddle,-28,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},"['Right', 'Left']",{},{}
+29,1.049,Paddle,-8,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+30,1.084,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+31,1.116,Paddle,12,-145,-90,[],motion_changexby{math_number(NUM:-20)},"['Right', 'Left']",{},{}
+32,1.151,Paddle,-8,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+33,1.184,Paddle,-28,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+34,1.221,Paddle,-28,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},"['Right', 'Left']",{},{}
+35,1.249,Paddle,-8,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+36,1.28,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+37,1.317,Paddle,12,-145,-90,[],motion_changexby{math_number(NUM:-20)},"['Right', 'Left']",{},{}
+38,1.349,Paddle,-8,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+39,1.382,Paddle,-28,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+40,1.414,Paddle,-28,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},"['Right', 'Left']",{},{}
+41,1.451,Paddle,-8,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+42,1.484,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+43,1.513,Paddle,12,-145,-90,[],motion_changexby{math_number(NUM:-20)},"['Right', 'Left']",{},{}
+44,1.547,Paddle,-8,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+45,1.58,Paddle,-8,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},"['Right', 'Left']",{},{}
+46,1.613,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+47,1.648,Paddle,32,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+48,1.681,Paddle,32,-145,-90,[],motion_changexby{math_number(NUM:-20)},"['Right', 'Left']",{},{}
+49,1.713,Paddle,12,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+50,1.747,Paddle,-8,-145,-90,[],motion_changexby{math_number(NUM:-20)},"['Right', 'Left']",{},{}
+51,1.779,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},"['Right', 'Left']",{},{}
+52,1.813,Paddle,32,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+53,1.846,Paddle,12,-145,-90,[],motion_changexby{math_number(NUM:-20)},"['Right', 'Left']",{},{}
+54,1.88,Paddle,12,-145,-90,[],motion_changexby{math_number(NUM:-20)},"['Right', 'Left']",{},{}
+55,1.913,Paddle,32,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},"['Right', 'Left']",{},{}
+56,1.947,Paddle,32,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+57,1.98,Paddle,52,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+58,2.012,Paddle,72,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+59,2.048,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+60,2.079,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+61,2.112,Paddle,112,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+62,2.146,Paddle,112,-145,-90,[],motion_changexby{math_number(NUM:-20)},"['Right', 'Left']",{},{}
+63,2.179,Paddle,112,-145,-90,[],motion_changexby{math_number(NUM:-20)},"['Right', 'Left']",{},{}
+64,2.213,Paddle,92,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+65,2.247,Paddle,72,-145,-90,[],motion_changexby{math_number(NUM:-20)},"['Right', 'Left']",{},{}
+66,2.278,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},"['Right', 'Left']",{},{}
+67,2.313,Paddle,112,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+68,2.345,Paddle,132,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+69,2.379,Paddle,152,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+70,2.412,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+71,2.445,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+72,2.478,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+73,2.513,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+74,2.545,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+75,2.579,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+76,2.611,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+77,2.644,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+78,2.678,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+79,2.711,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+80,2.743,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+81,2.778,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+82,2.811,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+83,2.845,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+84,2.877,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+85,2.911,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+86,2.944,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+87,2.977,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+88,3.01,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+89,3.043,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+90,3.076,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+91,3.111,Paddle,172,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+92,3.143,Paddle,152,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+93,3.176,Paddle,132,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+94,3.209,Paddle,112,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+95,3.243,Paddle,92,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+96,3.275,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Left'],{},{}
+97,3.31,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+98,3.343,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+99,3.376,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+100,3.409,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+101,3.442,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+102,3.476,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+103,3.509,Paddle,72,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+104,3.542,Paddle,52,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+105,3.576,Paddle,32,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+106,3.608,Paddle,12,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+107,3.641,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Left'],{},{}
+108,3.674,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+109,3.71,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+110,3.742,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+111,3.775,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+112,3.808,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+113,3.841,Paddle,32,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+114,3.875,Paddle,52,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+115,3.908,Paddle,72,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+116,3.941,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+117,3.974,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+118,4.007,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+119,4.041,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+120,4.074,Paddle,72,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+121,4.108,Paddle,52,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+122,4.141,Paddle,32,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+123,4.175,Paddle,12,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+124,4.208,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Left'],{},{}
+125,4.241,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+126,4.274,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+127,4.307,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+128,4.34,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+129,4.373,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+130,4.406,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+131,4.444,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+132,4.478,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+133,4.51,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+134,4.543,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+135,4.578,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+136,4.611,Paddle,12,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+137,4.644,Paddle,32,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+138,4.676,Paddle,52,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+139,4.709,Paddle,72,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+140,4.742,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+141,4.775,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+142,4.81,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+143,4.844,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+144,4.875,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+145,4.909,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+146,4.942,Paddle,72,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+147,4.975,Paddle,52,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+148,5.008,Paddle,32,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+149,5.008,Paddle,32,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Left'],{},{}

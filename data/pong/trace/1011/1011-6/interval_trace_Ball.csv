@@ -1,0 +1,26 @@
+,clockTime,sprite,x,y,direction,touching,block,keysDown,variables,stageVariables
+0,0.041,Ball,39.2836283,127.0186667,140,[],motion_movesteps{math_number(NUM:15)},[],{},{}
+1,0.075,Ball,48.92544245,115.52800005,140,[],motion_movesteps{math_number(NUM:15)},[],{},{}
+2,0.108,Ball,58.5672566,104.0373334,140,[],motion_movesteps{math_number(NUM:15)},[],{},{}
+3,0.141,Ball,68.20907075,92.54666675,140,[],motion_movesteps{math_number(NUM:15)},[],{},{}
+4,0.175,Ball,77.8508849,81.0560001,140,[],motion_movesteps{math_number(NUM:15)},[],{},{}
+5,0.215,Ball,87.49269905,69.56533345,140,[],motion_movesteps{math_number(NUM:15)},[],{},{}
+6,0.247,Ball,97.1345132,58.0746668,140,[],motion_movesteps{math_number(NUM:15)},[],{},{}
+7,0.281,Ball,106.77632735,46.58400015,140,[],motion_movesteps{math_number(NUM:15)},['Right'],{},{}
+8,0.313,Ball,116.4181415,35.0933335,140,[],motion_movesteps{math_number(NUM:15)},['Right'],{},{}
+9,0.346,Ball,126.05995565,23.60266685,140,[],motion_movesteps{math_number(NUM:15)},['Right'],{},{}
+10,0.38,Ball,135.7017698,12.1120002,140,[],motion_movesteps{math_number(NUM:15)},['Right'],{},{}
+11,0.414,Ball,145.34358395,0.62133355,140,[],motion_movesteps{math_number(NUM:15)},['Right'],{},{}
+12,0.447,Ball,154.9853981,-10.8693331,140,[],motion_movesteps{math_number(NUM:15)},['Right'],{},{}
+13,0.479,Ball,164.62721225,-22.35999975,140,[],motion_movesteps{math_number(NUM:15)},"['Right', 'Left']",{},{}
+14,0.513,Ball,174.2690264,-33.8506664,140,[],motion_movesteps{math_number(NUM:15)},['Left'],{},{}
+15,0.547,Ball,183.91084055,-45.34133305,140,[],motion_movesteps{math_number(NUM:15)},['Left'],{},{}
+16,0.579,Ball,193.5526547,-56.8319997,140,[],motion_movesteps{math_number(NUM:15)},['Left'],{},{}
+17,0.612,Ball,203.19446885,-68.32266635,140,[],motion_movesteps{math_number(NUM:15)},['Left'],{},{}
+18,0.645,Ball,212.836283,-79.813333,140,[],motion_movesteps{math_number(NUM:15)},['Left'],{},{}
+19,0.679,Ball,203.19446885,-91.30399965,-140,[],motion_movesteps{math_number(NUM:15)},[],{},{}
+20,0.712,Ball,193.5526547,-102.7946663,-140,[],motion_movesteps{math_number(NUM:15)},['Right'],{},{}
+21,0.746,Ball,183.91084055,-114.28533295,-140,[],motion_movesteps{math_number(NUM:15)},['Right'],{},{}
+22,0.778,Ball,174.2690264,-125.7759996,-140,['Paddle'],motion_movesteps{math_number(NUM:15)},['Right'],{},{}
+23,0.812,Ball,164.62721225,-137.26666625,-140,['Paddle'],motion_movesteps{math_number(NUM:15)},['Right'],{},{}
+24,0.846,Ball,154.9853981,-148.7573329,-140,['Paddle'],motion_movesteps{math_number(NUM:15)},"['Right', 'Left']",{},{}

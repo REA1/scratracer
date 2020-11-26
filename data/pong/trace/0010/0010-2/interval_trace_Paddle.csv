@@ -1,0 +1,2 @@
+,clockTime,sprite,x,y,direction,touching,block,keysDown,variables,stageVariables
+0,0.006,Paddle,-3,-150,-90,[],motion_changexby{operator_random{FROMTO}},[],{},{}

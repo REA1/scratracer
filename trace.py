@@ -1,16 +1,38 @@
 import json
 import pandas as pd
 from event import PredicateSequence
+import os
+from event import *
+import pprint as pp
 
 class Trace():
     '''class representing the trace object'''
-    def __init__(self, raw_trace, interval_len):
-        self.sprites = set(map(lambda x:x["sprite"]["name"], raw_trace))
-        self.traces = {x:
-                        Trace.merge_to_interval([y for y in raw_trace 
-                        if y["sprite"]["name"] == x], interval_len)
-                    for x in self.sprites}
-        
+    def get_predicate(self, interval_len = 0.25):
+        for variation in ['1111', '1110', '1101', '1100', '1011', '1010', '1000', '0111', '0011', '0010']:
+            for i in range(1,11):
+                interval_len = 0.025
+                try:
+                    f = open(f"data/pong/json/{variation}/{variation}-{i}.json")
+                except:
+                    continue
+                raw_trace = json.load(f)
+                self.sprites = set(map(lambda x:x["sprite"]["name"], raw_trace))
+                self.traces = {x:
+                                Trace.merge_to_interval([y for y in raw_trace
+                                if y["sprite"]["name"] == x], interval_len)
+                            for x in self.sprites}
+                dir = f"data/pong/trace/{variation}/{variation}-{i}/"
+                if not os.path.exists(dir):
+                    os.makedirs(dir)
+                for sprite_name in self.traces:
+                    # self.traces[sprite_name].to_csv(f"{dir}/interval_trace_{sprite_name}.csv")
+                    all_seqs = self.mine_predicate_seq([is_moving, is_turning, is_touching])
+                    print(all_seqs)
+                    break
+                break
+            break
+
+
 
     @classmethod
     def from_json(cls, fp, interval_len):
@@ -81,10 +103,11 @@ class Trace():
                 }
                 merged_trace_df.loc[len(merged_trace_df)] = new_row
                 new_interval = True
-        merged_trace_df.to_csv("data/interval_trace_"+sprite_name+".csv")
+
+
         return merged_trace_df
 
-    def mine_predicate_seq(self, predicates, window_size):
+    def mine_predicate_seq(self, predicates):
         all_seqs = {}
         for sprite in self.sprites:
             seq = []
@@ -93,8 +116,10 @@ class Trace():
             for i in range(t_len):
                 ps = set()
                 for p in predicates:
-                    if (p_res := p(trace[i:(min(i+window_size+1, t_len))])) is not None:
+                    if (p_res := p(trace[i:(min(i+2, t_len))])) is not None:
                         ps.add(p_res)
                 seq.append(ps)
             all_seqs[sprite] = PredicateSequence(seq)
         return all_seqs
+
+

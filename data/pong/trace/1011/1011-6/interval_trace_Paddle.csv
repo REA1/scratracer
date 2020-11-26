@@ -1,0 +1,25 @@
+,clockTime,sprite,x,y,direction,touching,block,keysDown,variables,stageVariables
+0,0.056,Paddle,52,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+1,0.112,Paddle,52,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+2,0.143,Paddle,52,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+3,0.187,Paddle,52,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+4,0.225,Paddle,52,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+5,0.253,Paddle,52,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+6,0.29,Paddle,52,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+7,0.319,Paddle,72,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+8,0.35,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+9,0.382,Paddle,112,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+10,0.428,Paddle,132,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+11,0.459,Paddle,152,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+12,0.486,Paddle,152,-145,-90,[],motion_changexby{math_number(NUM:-20)},"['Right', 'Left']",{},{}
+13,0.516,Paddle,132,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+14,0.554,Paddle,112,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+15,0.583,Paddle,92,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+16,0.617,Paddle,72,-145,-90,[],motion_changexby{math_number(NUM:-20)},['Left'],{},{}
+17,0.65,Paddle,72,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Left'],{},{}
+18,0.683,Paddle,72,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},[],{},{}
+19,0.716,Paddle,72,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+20,0.749,Paddle,92,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+21,0.784,Paddle,112,-145,-90,[],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+22,0.818,Paddle,132,-145,-90,['Ball'],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
+23,0.819,Paddle,152,-145,-90,['Ball'],control_if{sensing_keypressed{KEY_OPTION}},['Right'],{},{}
