@@ -1,0 +1,7 @@
+2 * (Move - [Dir:Left], Touching - [Item:['Edge']], KeysDown - [Keys:['Left']])
+15 * (Move - [Dir:Left], KeysDown - [Keys:['Left']])
+3 * (Touching - [Item:['Edge']],)
+3 * (KeysDown - [Keys:['Right']],)
+4 * ()
+31 * (Move - [Dir:Right], KeysDown - [Keys:['Right']])
+7 * (Move - [Dir:Right], Touching - [Item:['Edge']], KeysDown - [Keys:['Right']])

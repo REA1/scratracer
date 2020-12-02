@@ -1,0 +1,3 @@
+5 * ()
+1 * (Touching - [Item:['Ball']],)
+8 * (Move - [Dir:Left], KeysDown - [Keys:['Left']])

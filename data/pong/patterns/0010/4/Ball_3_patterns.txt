@@ -1,0 +1,7 @@
+1 * (Move, Turn)
+6 * (Move, Touching - [Item:['Paddle']])
+2 * (Turn,)
+141 * (Move,)
+2 * ()
+5 * (Move, Turn, Touching - [Item:['Edge']])
+5 * (Move, Touching - [Item:['Edge']])

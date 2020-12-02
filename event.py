@@ -9,16 +9,19 @@ def is_moving(window):
     i, j  = index_list[0], index_list[1]
     if window.at[i, 'x'] ==  window.at[j, 'x'] and window.at[i, 'y'] ==  window.at[j, 'y']:
         return None
-    elif window.at[i, 'x'] !=  window.at[j, 'x'] and window.at[i, 'y'] !=  window.at[j, 'y']:
+    elif (window.at[i, 'x'] !=  window.at[j, 'x'] and window.at[i, 'y'] !=  window.at[j, 'y']) or window.at[j, 'sprite'] == 'Ball':
         return Predicate('Move')
     else:
-        dir = None
+        mydir = ""
         if window.at[i, 'x'] < window.at[j, 'x']:
-            dir = "left"
+            mydir = "Right"
         elif window.at[i, 'x'] > window.at[j, 'x']:
-            dir = "right"
-        direction = get_direction(dir)
-        return Predicate("Move", [direction])
+            mydir = "Left"
+        if mydir != "":
+            direction = get_direction(mydir)
+            return Predicate("Move", [direction])
+        else:
+            return Predicate("Move")
 
 
 def is_turning(window):
@@ -35,7 +38,18 @@ def is_turning(window):
     else:
         return Predicate("Turn")
 
-
+def is_keys_down(window):
+    index_list = []
+    for i in window.index:
+        index_list.append(i)
+    if len(index_list) < 2:
+        return None
+    i, j  = index_list[0], index_list[1]
+    if window.at[j, 'keysDown'] and window.at[j, 'sprite'] == 'Paddle':
+        keys_down = window.at[j, 'keysDown']
+        return Predicate("KeysDown", [Attr("Keys", keys_down)])
+    else:
+        return None
 
 def is_touching(window):
 
@@ -44,16 +58,32 @@ def is_touching(window):
         index_list.append(i)
     if len(index_list) < 2:
         return None
-
+    touching_what = []
     i, j  = index_list[0], index_list[1]
+    if window.at[j, 'x'] > 210:
+        touching_what.append('Edge')
+        # touching_what.append('Right Edge')
+    elif window.at[j, 'x'] < -210:
+        # touching_what.append('Left Edge')
+        touching_what.append('Edge')
+
+    elif window.at[j, 'y'] > 170:
+        # touching_what.append('Upper Edge')
+        touching_what.append('Edge')
+    elif window.at[j, 'y'] < -170:
+        touching_what.append('Edge')
+        # touching_what.append('Lower Edge')
+
     if window.at[j, 'touching']:
-        return Predicate("Touching", [get_touching_what(window.at[j, 'touching'][0])])
+        touching_what.append(window.at[j, 'touching'][0])
+    if touching_what:
+        return Predicate("Touching", [Attr("Item", touching_what)])
     else:
         return None
 
 
 def get_direction(dir):
-    return Attr("Dir")
+    return Attr("Dir", dir)
 
 
 def get_speed(window):
@@ -83,7 +113,10 @@ class Predicate():
         return next(filter(lambda x: x.id == id_str, self.attr), None)
 
     def __repr__(self):
-        return str(self.id) + " - [" + ", ".join(map(str, self.attr)) + "]"
+        if self.attr != [] and self.attr is not None:
+            return str(self.id) + " - [" + ", ".join(map(str, self.attr)) + "]"
+        else:
+            return str(self.id)
 
 class Attr():
     '''class representing an attribute part of a predicate'''

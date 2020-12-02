@@ -7,30 +7,34 @@ import pprint as pp
 
 class Trace():
     '''class representing the trace object'''
-    def get_predicate(self, interval_len = 0.25):
-        for variation in ['1111', '1110', '1101', '1100', '1011', '1010', '1000', '0111', '0011', '0010']:
-            for i in range(1,11):
-                interval_len = 0.025
-                try:
-                    f = open(f"data/pong/json/{variation}/{variation}-{i}.json")
-                except:
-                    continue
-                raw_trace = json.load(f)
-                self.sprites = set(map(lambda x:x["sprite"]["name"], raw_trace))
-                self.traces = {x:
-                                Trace.merge_to_interval([y for y in raw_trace
-                                if y["sprite"]["name"] == x], interval_len)
-                            for x in self.sprites}
-                dir = f"data/pong/trace/{variation}/{variation}-{i}/"
-                if not os.path.exists(dir):
-                    os.makedirs(dir)
-                for sprite_name in self.traces:
-                    # self.traces[sprite_name].to_csv(f"{dir}/interval_trace_{sprite_name}.csv")
-                    all_seqs = self.mine_predicate_seq([is_moving, is_turning, is_touching])
-                    print(all_seqs)
-                    break
-                break
-            break
+
+    def __init__(self):
+        self.variation = ''
+        self.session = None
+
+
+
+    def get_predicate(self):
+        variation = self.variation
+        i = self.session
+        try:
+            f = open(f"data/pong/json/{variation}/{variation}-{i}.json")
+        except:
+            print(f"data/pong/json/{variation}/{variation}-{i}.json not found!")
+            return None
+        raw_trace = json.load(f)
+        self.sprites = set(map(lambda x:x["sprite"]["name"], raw_trace))
+        self.traces = {x:
+                        Trace.merge_for_action([y for y in raw_trace
+                        if y["sprite"]["name"] == x])
+                    for x in self.sprites}
+        # dir = f"data/pong/trace/{variation}/{variation}-{i}/"
+        # for sprite_name in self.traces:
+        #     if not os.path.exists(dir):
+        #         os.makedirs(dir)
+        #     self.traces[sprite_name].to_csv(f"{dir}/interval_trace_{sprite_name}.csv")
+        all_seqs = self.mine_predicate_seq([is_moving, is_turning, is_touching, is_keys_down])
+        return all_seqs
 
 
 
@@ -103,8 +107,40 @@ class Trace():
                 }
                 merged_trace_df.loc[len(merged_trace_df)] = new_row
                 new_interval = True
+        return merged_trace_df
 
 
+    @staticmethod
+    def merge_for_action(trace):
+        # merged_trace = []
+        merged_trace_df = pd.DataFrame(columns = ['clockTime', 'sprite', 'x', 'y', 'direction', 'touching', 'block', 'keysDown', 'variables', 'stageVariables'])
+        stage_var_dict = {}
+        last_record = []
+        for i, d in enumerate(trace):
+            sprite = d['sprite']['name']
+            x = d["sprite"]['x']
+            y = d["sprite"]['y']
+            direction = d['sprite']['direction']
+            touching = trace[i]["sprite"]["touching"]
+            keysDown = trace[i]["keysDown"]
+            variables = Trace.variable_simplify(d['sprite']['variables'], stage_var_dict)
+            stage_variables = Trace.variable_simplify(d['stageVariables'], stage_var_dict)
+            this_record = [sprite, x, y, direction, touching, keysDown, variables, stage_variables]
+            if (this_record != last_record) or (i+1 >= len(trace)):
+                new_row = {
+                    "clockTime": d['clockTime'],
+                    'sprite': sprite,
+                    'x': x,
+                    'y': y,
+                    'direction': direction,
+                    'touching': touching,
+                    'block': Trace.block_simplify(d['block']),
+                    'keysDown': keysDown,
+                    'variables': variables,
+                    'stageVariables': stage_variables
+                }
+                merged_trace_df.loc[len(merged_trace_df)] = new_row
+            last_record = this_record
         return merged_trace_df
 
     def mine_predicate_seq(self, predicates):
@@ -114,12 +150,12 @@ class Trace():
             trace = self.traces[sprite]
             t_len = len(trace.index)
             for i in range(t_len):
-                ps = set()
+                ps = []
                 for p in predicates:
                     if (p_res := p(trace[i:(min(i+2, t_len))])) is not None:
-                        ps.add(p_res)
-                seq.append(ps)
-            all_seqs[sprite] = PredicateSequence(seq)
+                        ps.append(p_res)
+                seq.append(tuple(ps))
+            all_seqs[sprite] = seq
         return all_seqs
 
 

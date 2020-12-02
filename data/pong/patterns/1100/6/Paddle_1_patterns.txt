@@ -1,0 +1,5 @@
+1 * (KeysDown - [Keys:['Left']],)
+23 * (Move - [Dir:Left], KeysDown - [Keys:['Left']])
+5 * (KeysDown - [Keys:['Right']],)
+13 * ()
+19 * (Move - [Dir:Right], KeysDown - [Keys:['Right']])
