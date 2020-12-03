@@ -44,25 +44,41 @@ class ClassificationTarget(object):
         save_obj(all_patterns['Ball'], "ball_patterns", "data/pong", "result")
 
         for target in [1, 2, 3]:
-            x = []
-            y = []
-            for variation in PatternAnalysis.variation_list:
-                for i in range(1, 11):
-                    predicate_dict = PatternAnalysis.traces[variation].get(i, None)
-                    if not predicate_dict:
-                        continue
-                    sprite_name = ['Paddle', 'Ball'][target != 1]
-                    predicate_list = predicate_dict[sprite_name]
-                    current_patterns = NGramPattern.extract_all_from_trace(predicate_list)
-                    save_obj(current_patterns, f"{sprite_name}_{target}_patterns", 'data/pong', f'patterns/{variation}/{i}')
-                    cur_x = list(map(lambda x: int(x in current_patterns), all_patterns[sprite_name]))
-                    x.append(cur_x)
-                    y.append(int(variation[target - 1]))
-            x = np.array(x)
-            y = np.array(y)
-            save_obj(x, f"{target}_x", "data/pong", "result")
-            save_obj(y, f"{target}_y", "data/pong", "result")
-            ModelSelectionTrainer(x, y).get_best_model()
+            y_pred_accu = np.array([])
+            y_test_accu = np.array([])
+            for fold in range(8):
+                x_train, x_test = [], []
+                y_train, y_test = [], []
+                for v, variation in enumerate(PatternAnalysis.variation_list):
+                    for i in range(1, 11):
+                        predicate_dict = PatternAnalysis.traces[variation].get(i, None)
+                        if not predicate_dict:
+                            continue
+                        sprite_name = ['Paddle', 'Ball'][target != 1]
+                        predicate_list = predicate_dict[sprite_name]
+                        current_patterns = NGramPattern.extract_all_from_trace(predicate_list)
+                        save_obj(current_patterns, f"{sprite_name}_{target}_patterns", 'data/pong', f'patterns/{variation}/{i}')
+                        cur_x = list(map(lambda x: int(x in current_patterns), all_patterns[sprite_name]))
+                        if fold != v:
+                            x_train.append(cur_x)
+                            y_train.append(int(variation[target - 1]))
+                        elif fold == v:
+                            x_test.append(cur_x)
+                            y_test.append(int(variation[target - 1]))
+
+                x_train, x_test = np.array(x_train), np.array(x_test)
+                y_train, y_test = np.array(y_train), np.array(y_test)
+                y_pred = bernoulli_nb.get_y_pred(x_train, x_test, y_train)
+                y_pred_accu = np.append(y_pred_accu, y_pred)
+                y_test_accu = np.append(y_test_accu, y_test)
+            performance = bernoulli_nb.get_matrix(y_test_accu, y_pred_accu)
+            performance_df = pd.Series(performance)
+            save_obj(performance_df, f"{target}_performance_df", 'data/pong', 'result')
+
+
+
+
+
 
     def display_data_df(self):
         paddle_patterns = load_obj("paddle_patterns", "data/pong", "result")

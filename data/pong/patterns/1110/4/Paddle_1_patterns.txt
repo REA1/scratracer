@@ -1,4 +1,4 @@
-6 * ()
-9 * (Move - [Dir:Right], KeysDown - [Keys:['Right']])
 2 * (KeysDown - [Keys:['Right']],)
 8 * (Move - [Dir:Left], KeysDown - [Keys:['Left']])
+6 * ()
+9 * (Move - [Dir:Right], KeysDown - [Keys:['Right']])
