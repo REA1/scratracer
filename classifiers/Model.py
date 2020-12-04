@@ -50,20 +50,10 @@ class Model:
 
 
     def get_y_pred(self,X_train, X_test, y_train):
-        # print(X_train)
-        # print(y_train)
         self.model.fit(X_train, y_train)
-        # importance = (self.model.coef_)[0]
-        # for i, v in enumerate(importance):
-        #     print('Feature: %0d, Score: %.5f' % (i, v))
-        # # plot feature importance
-        # pyplot.bar([x for x in range(len(importance))], importance)
-        # pyplot.show()
-        # sorted
-        # print(coef)
-        # print([round(c,2) for c in coef[0]])
         y_pred = self.model.predict(X_test)
         return (y_pred)
+
 
     def get_matrix(self, y_test, y_pred):
         self.confusion_matrix = confusion_matrix(y_test, y_pred)
@@ -94,7 +84,7 @@ class Model:
         print(perf)
         return perf
 
-    def get_and_save_performance(self,X_train, X_test, y_train, y_test, save_dir, test_size, cv):
+    def get_and_save_performance(self,X_train, X_test, y_train, y_test):
 
             self.model.fit(X_train,y_train)
             y_pred = self.model.predict(X_test)
@@ -119,7 +109,6 @@ class Model:
             perf = {"tp": tp, "tn": tn, "fp": fp, "fn": fn, "accuracy": accuracy, "precision": precision, "recall": recall,
                     "f1": f1, "auc": roc_auc}
             self.performance = perf
-            self.save_performance( save_dir, test_size, cv)
             return perf
 
 

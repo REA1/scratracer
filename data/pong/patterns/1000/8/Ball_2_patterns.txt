@@ -1,4 +1,4 @@
-1 * ()
-4 * (Touching - [Item:['Edge']],)
 23 * (Move,)
+4 * (Touching - [Item:['Edge']],)
 38 * (Move, Touching - [Item:['Edge']])
+1 * ()
